@@ -1,0 +1,34 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2712";
+
+	fragment@0 {
+		target = <&spi0>;
+		__overlay__ {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "okay";
+
+			st7796s: st7796s@0{
+				compatible = "sitronix,st7796s";
+				/* CS 0 */
+                reg = <0>;
+				spi-max-frequency = <125000000>;
+				rotate = <270>;
+				fps = <60>;
+				buswidth = <8>;
+				reset-gpios = <&gpio 6 1>; //gpio6
+				dc-gpios = <&gpio 5 0>;  //gpio5
+				debug = <1>;
+				status = "okay";
+			};
+
+			
+
+		};
+	};
+
+
+};
