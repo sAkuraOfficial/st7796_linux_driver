@@ -16,7 +16,7 @@
 				/* CS 0 */
                 reg = <0>;
 				spi-max-frequency = <125000000>;
-				rotate = <270>;
+				rotate = <0>;
 				fps = <60>;
 				buswidth = <8>;
 				reset-gpios = <&gpio 6 1>; //gpio6
